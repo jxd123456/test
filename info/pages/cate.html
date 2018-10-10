@@ -1,0 +1,107 @@
+<div id="category">
+		<button class="btn btn-success btn-sm addBtn">新增</button>
+	    <button class="btn btn-success btn-sm">批量删除</button>
+	    <table class="table table-bordered text-center">
+	    	<tr>
+	    		<td>编号</td>
+	    		<td>栏目名称</td>
+	    		<td>父栏目</td>
+	    		<td>描述</td>
+	    		<td>操作</td>
+	    	</tr>
+	    	<tr>
+	    		<td><form action="" class="form-horizontal">
+	    			<div class="form-group">
+	    				<div class="checkbox text-center "><label for=""><input type="checkbox" class="bg-white"></label></div>
+	    			</div>
+	    		</form></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    	</tr>
+	    	<tr>
+	    		<td><div class="checkbox text-center "><label for="checkbox"><input type="checkbox" value="checkbox" "></label></div></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    	</tr>
+	    	<tr>
+	    		<td><div class="checkbox text-center "><label for=""><input type="checkbox" class="bg-white"></label></div></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    		<td></td>
+	    	</tr>
+	    </table>
+	    <div class="modal" id="cateModal">
+	    	<div class="modal-dialog">
+	    		<div class="modal-content">
+	    			<div class="modal-header text-center">
+	    				<div class="backDiv">
+	    					<i class="iconfont icon-zuo"></i>
+	    					<span>返回</span>
+	    				</div>
+	    				<div class="modal-title">
+	    					添加栏目
+	    				</div>
+	    			</div>
+	    			<div class="modal-body">
+	    				<form action="">
+	    					<div class="form-group">
+	    						<label for="">栏目名称</label>
+	    						<input type="text" name="catename" class="form-control">
+	    					</div>
+	    					<div class="form-group">
+	    						<label for="">父栏目</label>
+	    						<select name="fcatename" class="form-control"></select>
+	    					</div>
+	    					<div class="form-group">
+	    						<label for="">描述</label>
+	    						<textarea name="dec" id="" cols="30" rows="3" class="form-control"></textarea>
+	    					</div>
+	    				</form>
+	    			</div>
+	    			<div class="modal-footer">
+	    				<button class="btn btn-success">确认</button>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+
+</div>
+<script>
+	$(function(){
+		$('.modal-content').height($(window).height());
+		$('.addBtn').click(function(){
+			$('#cateModal').show();
+		});
+		$('.backDiv').click(function(){
+			$('#cateModal').hide();
+		});
+	})
+</script>
+<style>
+	.btn-sm{
+		margin:10px;
+	}
+	#category{
+		/*width: 98%;
+		height: 560px;*/
+		background: white;
+		margin:20px;
+	}
+	.modal{
+		background-color:rgba(0,0,0,0.4); 
+	}
+	.modal-dialog{
+		width: 300px;
+		margin-top: 0;
+		margin-right: 0;
+	}
+	.backDiv{
+		float: left;
+		cursor: pointer;
+	}
+</style>

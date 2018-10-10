@@ -1,0 +1,352 @@
+
+<div id="home">
+	<div class="outDiv">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="totalDiv bg-white">
+					<div class="iconDiv bg-green"><i class="iconfont icon-yun"></i></div>
+					<div class="numDiv">
+						<span>99.9%</span>
+						<small>SERVER UPTIME</small>
+					</div>
+				</div>
+				<div class="totalDiv bg-white">
+					<div class="iconDiv bg-purple"><i class="iconfont icon-user"></i></div>
+					<div class="numDiv">
+						<span>117K</span>
+						<small>USERS TOTAL</small>
+					</div>
+				</div>
+				<div class="totalDiv bg-white">
+					<div class="iconDiv bg-blue"><i class="iconfont icon-18"></i></div>
+					<div class="numDiv">
+						<span>2,470</span>
+						<small>NEW DAILY PHOTOS</small>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="visDiv">
+					<div id="visContainer">
+						
+					</div>
+					<div class="numDiv">
+						<span>14.85%</span>
+						<small>More Visitors</small>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="uptimeDiv">
+					<div id="uptimeContainer"></div>
+					<div class="numDiv">
+						<span>95.8%</span>
+						<small>CURRENT SERVER UPTIME</small>
+					</div>
+				</div>
+				<div class="salesDiv">
+					<div id="salesContainer"></div>
+					<div class="numDiv">
+						<span>320,45</span>
+						<small>AVG OF SALES</small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 第二行 -->
+		<div class="row">
+			<div class="col-sm-6 bg-white">
+				<div class="visDiv">
+					<div id="container">
+						
+				    </div>
+				    <div class="numDiv">
+						<span>14.85%</span>
+						<small>More Visitors</small>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 bg-white">
+				<div class="uptimeDiv">
+					<div id="uptimeContainer"></div>
+					<div class="numDiv">
+						<span>95.8%</span>
+						<small>CURRENT SERVER UPTIME</small>
+					</div>
+				</div>
+				<div class="salesDiv">
+					<div id="salesContainer"></div>
+					<div class="numDiv">
+						<span>320,45</span>
+						<small>AVG OF SALES</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+drawSales();
+function drawSales(){
+var chart = Highcharts.chart('salesContainer', {
+       chart:{
+				margin:[0,0,0,100],
+				},
+				credits:{
+					enabled:false,
+				},
+				colors:['#2e681c','#9ddc8b','2c6919'],
+	title: {
+		floating:true,
+		text: ''
+	},
+	tooltip: {
+		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	},
+	plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: false,
+			},
+		}
+	},
+	series: [{
+		type: 'pie',
+		innerSize: '60%',
+		name: 'Sales',
+		data: [
+			['Firefox',45.0],
+			['IE',26.8],
+			['Chrome',12.8],
+			['Safari',8.5],
+			['Opera',6.2],
+			['其他',0.7]
+		]
+	}]
+});
+
+	}
+
+// });
+
+// $(function(){
+drawUptime();
+function drawUptime(){
+var chart = Highcharts.chart('uptimeContainer', {
+	chart:{
+					margin:[0,0,0,0],
+				},
+				credits:{
+					enabled:false,
+				},
+				colors:['#7b38bc'],
+	title: {
+		text: ''
+	},
+	xAxis: {
+		visible:false,
+	},
+	yAxis: {
+		visible:false,
+	},
+	series: [{
+		type: 'column',
+		colorByPoint: true,
+		data: [29.9, 71.5, 106.4,176.0, 135.6,176.0, 129.2, 144.0, 176.0, 135.6,176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+		showInLegend: false
+	}]
+});
+
+	}
+// })
+	// $(function(){
+	drawVis();
+	function drawVis(){
+    var chart = Highcharts.chart('visContainer', {
+				chart:{
+					margin:[0,0,0,0],
+				},
+				credits:{
+					enabled:false,
+				},
+				colors:['#6cb822','#ccc'],
+				title: {
+					text: ''
+				},
+				xAxis: {
+					visible:false,
+				},
+				yAxis: {
+					visible:false,
+					title: {
+						text: ''
+					}
+				},
+				legend: {
+					floating:true,
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top'
+				},
+				plotOptions: {
+					series: {
+						label: {
+							connectorAllowed: false
+						},
+						pointStart: 2010
+					}
+				},
+				series: [{
+					name: 'Page',
+					data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+				}, {
+					name: 'Visitors',
+					data: [24916, 24064, 29742, 39851, 42490, 40282,60207, 58121, 40434]
+				}]
+			});
+  }
+  
+  var chart = Highcharts.chart('container', {
+  	chart:{
+			margin:[0,0,0,0],
+				},
+				credits:{
+					enabled:false,
+				},
+	title: {
+		text: ''
+	},
+	xAxis:{
+		visible:false,
+	},
+	yAxis: {
+		visible:false,
+		title: {
+			text: '就业人数'
+		}
+	},
+	legend: {
+		layout: 'vertical',
+		align: 'right',
+		verticalAlign: 'middle'
+	},
+	plotOptions: {
+		series: {
+			label: {
+				connectorAllowed: false
+			},
+			pointStart: 2010
+		}
+	},
+	series: [{
+		name: '安装',
+		data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+	}, {
+		name: '工人',
+		data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+	}]
+});
+});
+</script>
+<style>
+	.outDiv{
+		width:95%;
+		margin: 0 auto;
+	}
+	/*颜色类*/
+	.bg-white{
+		background-color: #fff;
+	}
+	.bg-green{
+		background-color: #6cb822;
+	}
+	.bg-purple{
+		background-color: #7b38bc;
+	}
+	.bg-blue{
+		background-color: #41baf3;
+	}
+	.totalDiv{
+		overflow:hidden;
+		padding: 10px;
+		border-radius: 5px;
+		margin-top: 10px;
+	}
+	.totalDiv .iconDiv,.totalDiv .numDiv{
+		float:left;
+	}
+	.totalDiv .iconDiv{
+		width: 50px;
+		height: 50px; 
+		border-radius:60%;
+		text-align: center;
+	}
+	.iconDiv i{
+		line-height: 50px;
+		color:white;
+		font-size:30px;
+	}
+	.totalDiv .numDiv{
+		margin-left:20px;
+		padding-top: 5px;
+	}
+	.numDiv span{
+		font-size:24px;
+		line-height: 24px; 
+		/*1.4em*/
+	}
+	.numDiv small{
+		display: block;
+		font-family:'微软雅黑';
+		color:#ccc;
+		font-size: 10px;
+	}
+	#visContainer{
+		height: 230px;
+		margin-top: 10px;
+	}
+	#container{
+		height: 230px;
+		margin-top: 10px;
+	}
+	.visDiv,.uptimeDiv,.salesDiv{
+		position: relative;
+	}
+	.visDiv .numDiv,.uptimeDiv .numDiv,.salesDiv .numDiv{
+		position: absolute;
+		top: 20px;left:20px;
+	}
+	.visDiv span,.salesDiv span{
+		color:#6cb822;
+	}
+	.uptimeDiv span{
+		color:#7b38bc;
+	}
+	.uptimeDiv,.salesDiv{
+		margin-top:10px;
+	}
+	#uptimeContainer,#salesContainer{
+		height: 110px;
+	}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
